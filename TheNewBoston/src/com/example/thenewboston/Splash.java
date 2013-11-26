@@ -20,8 +20,7 @@ public class Splash extends Activity {
 					e.printStackTrace();
 					// TODO: handle exception
 				} finally {
-					Intent intent = new Intent(
-							"com.example.thenewboston.STARTINGPOINT");
+					Intent intent = new Intent("com.example.thenewboston.MENU");
 					startActivity(intent);
 
 				}
@@ -30,6 +29,13 @@ public class Splash extends Activity {
 
 		};
 		timer.start();
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish();
 	}
 
 }
