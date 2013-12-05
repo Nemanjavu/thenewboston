@@ -50,7 +50,7 @@ public class Data extends Activity implements OnClickListener {
 		case R.id.bSAFR:
 			Intent i = new Intent(Data.this, OpenedClass.class);
 			startActivityForResult(i, 0);
-			
+
 			break;
 		}
 
@@ -60,6 +60,12 @@ public class Data extends Activity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
+		if (resultCode == RESULT_OK) {
+			Bundle basket = data.getExtras();
+			String s = basket.getString("answer");
+			gotAnswer.setText(s);
+
+		}
 	}
 
 }
